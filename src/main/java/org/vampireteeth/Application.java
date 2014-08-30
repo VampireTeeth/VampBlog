@@ -13,7 +13,7 @@ public class Application {
 
 	public static void main(String... args) {
 		SpringApplication.run(Application.class, args);
-		Customer c = new Customer("Steven", "Liu");
+		Customer c = new Customer("Steven", "Liu", 30);
     System.out.println(c);
 	}
 

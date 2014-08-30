@@ -11,9 +11,12 @@ public class Customer {
 
 	private String lastName;
 
-	public Customer(String firstName, String lastName) {
+	private int age;
+
+	public Customer(String firstName, String lastName, int age) {
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.age = age;
 	}
 
 	/**
@@ -46,10 +49,26 @@ public class Customer {
 		this.lastName = lastName;
 	}
 
+	/**
+	 * @return the age
+	 */
+	public int getAge() {
+		return age;
+	}
+
+	/**
+	 * @param age
+	 *            the age to set
+	 */
+	public void setAge(int age) {
+		this.age = age;
+	}
+
 	@Override
 	public String toString() {
-		return String.format("Customer[id=%s,firstName=%s, lastName=%s]",
-				this.id, this.firstName, this.lastName);
+		return String.format(
+				"Customer[id=%s,firstName=%s, lastName=%s, age=%d]", this.id,
+				this.firstName, this.lastName, this.age);
 	}
 
 }
