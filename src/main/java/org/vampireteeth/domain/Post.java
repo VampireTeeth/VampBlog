@@ -15,20 +15,19 @@ public class Post {
 
 	private String content;
 
-  private List<String> tags;
+	private List<String> tags;
 
 	private List<String> comments;
 
 	private Calendar createdOn;
 
-  public Post(String title, String content) {
-    this.title = title;
-    this.content = content;
-    this.tags = new LinkedList<String>();
-    this.comments = new LinkedList<String>();
-    this.createdOn = Calendar.getInstance();
-  }
-
+	public Post(String title, String content) {
+		this.title = title;
+		this.content = content;
+		this.tags = new LinkedList<String>();
+		this.comments = new LinkedList<String>();
+		this.createdOn = Calendar.getInstance();
+	}
 
 	/**
 	 * @return the title
@@ -37,14 +36,13 @@ public class Post {
 		return title;
 	}
 
-  /**
-   * @set the title
-   */
-  public Post setTitle(String title){
-    this.title = title;
-    return this;
-  }
-
+	/**
+	 * @set the title
+	 */
+	public Post setTitle(String title) {
+		this.title = title;
+		return this;
+	}
 
 	/**
 	 * @return the content
@@ -54,11 +52,12 @@ public class Post {
 	}
 
 	/**
-	 * @param content the content to set
+	 * @param content
+	 *            the content to set
 	 */
 	public Post setContent(String content) {
 		this.content = content;
-    return this;
+		return this;
 	}
 
 	/**
@@ -68,10 +67,10 @@ public class Post {
 		return tags;
 	}
 
-  public Post addTag(String tag) {
-    this.tags.add(tag);
-    return this;
-  }
+	public Post addTag(String tag) {
+		this.tags.add(tag);
+		return this;
+	}
 
 	/**
 	 * @return the comments
@@ -80,10 +79,10 @@ public class Post {
 		return comments;
 	}
 
-  public Post addComment(String comment) {
-    this.comments.add(comment);
-    return this;
-  }
+	public Post addComment(String comment) {
+		this.comments.add(comment);
+		return this;
+	}
 
 	/**
 	 * @return the createdOn

@@ -25,10 +25,10 @@ public class PostTest {
 		Assert.assertEquals(this.title, title);
 	}
 
-  @Test
+	@Test
 	public void testGetContent() {
-    String content = this.post.getContent();
-    Assert.assertEquals(this.content, content);
+		String content = this.post.getContent();
+		Assert.assertEquals(this.content, content);
 	}
 
 	@Test

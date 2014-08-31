@@ -1,5 +1,7 @@
 package org.vampireteeth.domain;
 
+import java.util.Calendar;
+
 import org.springframework.data.annotation.Id;
 
 public class Customer {
@@ -13,10 +15,13 @@ public class Customer {
 
 	private int age;
 
+	private Calendar birthday;
+
 	public Customer(String firstName, String lastName, int age) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;
+		this.birthday = Calendar.getInstance();
 	}
 
 	/**
@@ -27,26 +32,10 @@ public class Customer {
 	}
 
 	/**
-	 * @param firstName
-	 *            the firstName to set
-	 */
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	/**
 	 * @return the lastName
 	 */
 	public String getLastName() {
 		return lastName;
-	}
-
-	/**
-	 * @param lastName
-	 *            the lastName to set
-	 */
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
 	}
 
 	/**
@@ -56,12 +45,8 @@ public class Customer {
 		return age;
 	}
 
-	/**
-	 * @param age
-	 *            the age to set
-	 */
-	public void setAge(int age) {
-		this.age = age;
+	public Calendar getBirthday() {
+		return this.birthday;
 	}
 
 	@Override
