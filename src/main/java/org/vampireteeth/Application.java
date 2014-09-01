@@ -24,4 +24,5 @@ public class Application {
     System.out.println(post.getTitle());
     System.out.println(post.getContent());
   }
+
 }
