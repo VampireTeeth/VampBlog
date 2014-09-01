@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.vampireteeth.domain.Customer;
+import org.vampireteeth.domain.Post;
 
 @Configuration
 @EnableAutoConfiguration
@@ -12,9 +13,15 @@ import org.vampireteeth.domain.Customer;
 public class Application {
 
 	public static void main(String... args) {
-		SpringApplication.run(Application.class, args);
-		Customer c = new Customer("Steven", "Liu", 30);
-		System.out.println(c);
-	}
+    SpringApplication.run(Application.class, args);
+    Customer c = new Customer("Steven", "Liu", 30);
+    System.out.println(c);
+    printPost();
+  }
 
+  private static void printPost() {
+    Post post = new Post("This is a title", "This is a content");
+    System.out.println(post.getTitle());
+    System.out.println(post.getContent());
+  }
 }

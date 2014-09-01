@@ -1,3 +1,4 @@
+
 package org.vampireteeth.domain;
 
 import java.util.Calendar;
@@ -26,7 +27,7 @@ public class Post {
 		this.content = content;
 		this.tags = new LinkedList<String>();
 		this.comments = new LinkedList<String>();
-		this.createdOn = Calendar.getInstance();
+    this.createdOn = Calendar.getInstance();
 	}
 
 	/**

@@ -1,3 +1,4 @@
+
 package org.vampireteeth.domain;
 
 import java.util.Calendar;
