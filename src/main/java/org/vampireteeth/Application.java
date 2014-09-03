@@ -20,7 +20,7 @@ public class Application {
   }
 
   private static void printPost() {
-    Post post = new Post("This is a title", "This is a content");
+    Post post = new Post("title", "content", "Steven");
     System.out.println(post.getTitle());
     System.out.println(post.getContent());
   }

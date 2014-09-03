@@ -1,94 +1,61 @@
 package org.vampireteeth.domain;
 
-import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.springframework.data.annotation.Id;
+public class Post extends Document{
 
-public class Post {
+  private String title;
 
-	@Id
-	private String id;
+  private List<String> tags;
 
-	private String title;
+  private List<Document> comments;
 
-	private String content;
 
-	private List<String> tags;
+  public Post(String title, String content, String username) {
+    super(content, username);
+    this.title = title;
+    this.tags = new LinkedList<String>();
+    this.comments = new LinkedList<Document>();
+  }
 
-	private List<String> comments;
+  /**
+   * @return the title
+   */
+  public String getTitle() {
+    return title;
+  }
 
-	private Calendar createdOn;
+  /**
+   * @set the title
+   */
+  public Post setTitle(String title) {
+    this.title = title;
+    return this;
+  }
 
-	public Post(String title, String content) {
-		this.title = title;
-		this.content = content;
-		this.tags = new LinkedList<String>();
-		this.comments = new LinkedList<String>();
-    this.createdOn = Calendar.getInstance();
-	}
+  /**
+   * @return the tags
+   */
+  public List<String> getTags() {
+    return tags;
+  }
 
-	/**
-	 * @return the title
-	 */
-	public String getTitle() {
-		return title;
-	}
+  public Post addTag(String tag) {
+    this.tags.add(tag);
+    return this;
+  }
 
-	/**
-	 * @set the title
-	 */
-	public Post setTitle(String title) {
-		this.title = title;
-		return this;
-	}
+  /**
+   * @return the comments
+   */
+  public List<Document> getComments() {
+    return comments;
+  }
 
-	/**
-	 * @return the content
-	 */
-	public String getContent() {
-		return content;
-	}
-
-	/**
-	 * @param content
-	 *            the content to set
-	 */
-	public Post setContent(String content) {
-		this.content = content;
-		return this;
-	}
-
-	/**
-	 * @return the tags
-	 */
-	public List<String> getTags() {
-		return tags;
-	}
-
-	public Post addTag(String tag) {
-		this.tags.add(tag);
-		return this;
-	}
-
-	/**
-	 * @return the comments
-	 */
-	public List<String> getComments() {
-		return comments;
-	}
-
-	public Post addComment(String comment) {
-		this.comments.add(comment);
-		return this;
-	}
-
-	/**
-	 * @return the createdOn
-	 */
-	public Calendar getCreatedOn() {
-		return createdOn;
-	}
+  public Post addComment(Document comment) {
+    this.comments.add(comment);
+    return this;
+  }
 
 }

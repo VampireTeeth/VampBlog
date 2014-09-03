@@ -11,13 +11,21 @@ public class PostTest {
 
 	private String title;
 	private String content;
+  private String username;
+  private String commentContent;
+  private String commentUsername;
+  private Document comment;
 	private Post post;
 
 	@Before
 	public void setUp() {
 		this.title = "The google earth";
 		this.content = "This is a short content";
-		this.post = new Post(this.title, this.content);
+    this.username = "Steven";
+    this.commentContent = "This is a comment";
+    this.commentUsername = "VampireTeeth";
+    this.comment = new Document(this.commentContent, this.commentUsername);
+		this.post = new Post(this.title, this.content, this.username);
 	}
 
 	@Test
@@ -52,8 +60,7 @@ public class PostTest {
 
 	@Test
 	public void testAddComment() {
-		String comment = "First comment";
-		this.post.addComment(comment);
+		this.post.addComment(this.comment);
 		Assert.assertEquals(1, this.post.getComments().size());
 		Assert.assertEquals(comment, this.post.getComments().get(0));
 	}
