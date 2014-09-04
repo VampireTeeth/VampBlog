@@ -15,7 +15,7 @@ public class DocumentTest {
   private String username;
   private Calendar createdOn;
   private Document document;
-
+  
   @Before
   public void setUp(){
     this.content = "Short content";
@@ -48,6 +48,7 @@ public class DocumentTest {
       Assert.assertEquals(exp.get(field), act.get(field));
     }
   }
+
   @After
   public void tearDown() {}
 }
