@@ -1,6 +1,7 @@
 package org.vampireteeth.domain;
 
 import java.util.LinkedList;
+
 import java.util.List;
 
 public class Post extends Document{
@@ -10,7 +11,6 @@ public class Post extends Document{
   private List<String> tags;
 
   private List<Document> comments;
-
 
   public Post(String title, String content, String username) {
     super(content, username);
