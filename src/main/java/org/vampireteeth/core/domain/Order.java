@@ -25,6 +25,7 @@ public class Order {
     this.key = UUID.randomUUID();
     this.dateTimeOfSubmission = dateTimeOfSubmission;
     statusHistory = new ArrayList<OrderStatus>();
+    this.customer = null;
   }
 
   public void addStatus(OrderStatus newStatus) {
@@ -32,7 +33,14 @@ public class Order {
     this.status = newStatus;
   }
 
-  public OrderStatus getStatus() {
+	/**
+	 * @return the customer
+	 */
+	public Customer getCustomer() {
+		return customer;
+	}
+
+	public OrderStatus getStatus() {
     return this.status;
   }
     

@@ -1,23 +1,39 @@
 package org.vampireteeth.domain;
 
+import java.util.Calendar;
 import java.util.LinkedList;
+import java.util.List;
+
+import org.springframework.data.annotation.Id;
 
 public class Post{
 
+  @Id
+  private String id;
   private String title;
   private String content;
+  private String username;
   private List<String> tags; 
-	private List<String> comments;
+	private List<Document> comments;
   private Calendar createdOn;
 
 	public Post(String title, String content) {
 		this.title = title;
 		this.content = content;
+    this.username = "Unknown";
 		this.tags = new LinkedList<String>();
-		this.comments = new LinkedList<String>();
+		this.comments = new LinkedList<Document>();
 		this.createdOn = Calendar.getInstance();
 	}
 
+	public Post(String title, String content, String username) {
+		this.title = title;
+		this.content = content;
+    this.username = username;
+		this.tags = new LinkedList<String>();
+		this.comments = new LinkedList<Document>();
+		this.createdOn = Calendar.getInstance();
+	}
 	/**
 	 * @return the id
 	 */
@@ -57,6 +73,20 @@ public class Post{
 	}
 
 	/**
+	 * @return the username
+	 */
+	public String getUsername() {
+		return username;
+	}
+
+	/**
+	 * @param username the username to set
+	 */
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	/**
 	 * @return the tags
 	 */
 	public List<String> getTags() {
@@ -71,11 +101,25 @@ public class Post{
 	/**
 	 * @return the comments
 	 */
-	public List<String> getComments() {
+	public List<Document> getComments() {
 		return comments;
 	}
 
-	public Post addComment(String comment) {
+	/**
+	 * @return the createdOn
+	 */
+	public Calendar getCreatedOn() {
+		return createdOn;
+	}
+
+	/**
+	 * @param createdOn the createdOn to set
+	 */
+	public void setCreatedOn(Calendar createdOn) {
+		this.createdOn = createdOn;
+	}
+
+	public Post addComment(Document comment) {
 		this.comments.add(comment);
 		return this;
 	}
