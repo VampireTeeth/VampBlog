@@ -13,6 +13,7 @@ import org.vampireteeth.domain.Post;
 @ComponentScan
 public class Application {
 
+<<<<<<< HEAD
 	public static void main(String... args) {
 		SpringApplication.run(Application.class, args);
 		Customer c = new Customer("Steven", "Liu", 30);
@@ -26,4 +27,19 @@ public class Application {
 		System.out.println(post.getContent());
 	}
 
+=======
+  public static void main(String... args) {
+    SpringApplication.run(Application.class, args);
+    Customer c = new Customer("Steven", "Liu", 30);
+    System.out.println(c);
+    printPost();
+  }
+
+  private static void printPost() {
+    Post post = new Post("title", "content", "Steven");
+    System.out.println(post.getTitle());
+    System.out.println(post.getContent());
+  }
+
+>>>>>>> d305d35965567d4aee515d030d3c103a4747636b
 }
