@@ -25,6 +25,14 @@ public class Customer {
 	}
 
 	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
+	}
+
+
+	/**
 	 * @return the firstName
 	 */
 	public String getFirstName() {
