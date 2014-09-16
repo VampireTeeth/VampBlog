@@ -1,0 +1,14 @@
+package org.vampireteeth.core.domain.orders;
+
+import org.vampireteeth.core.domain.OrderDetails;
+import org.vampireteeth.core.events.CreateEvent;
+
+
+public class CreateOrderEvent extends CreateEvent{
+
+  private OrderDetails orderDetails;
+
+  public CreateOrderEvent(OrderDetails orderDetails) {
+    this.orderDetails = orderDetails;
+  }
+}

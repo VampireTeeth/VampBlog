@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
-public class Post{
+public class Post {
 
   @Id
   private String id;

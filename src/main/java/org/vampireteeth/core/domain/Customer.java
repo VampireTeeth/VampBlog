@@ -1,7 +1,7 @@
 package org.vampireteeth.core.domain;
 
 
-public class Customer{
+public class Customer {
   private String name;
   private String streetAddress;
   private String city;
